@@ -7,12 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using StudentAPI.Models;
 
 namespace StudentAPI.Controllers
 {
     //[Authorize]
+    [EnableCors("*", "*", "GET")]
     public class StudentsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
